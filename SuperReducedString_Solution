@@ -1,0 +1,35 @@
+#!/bin/python3
+
+import sys
+
+def super_reduced_string(s):
+    # Complete this function
+    s_t = " "
+    i = 0
+    count = 0
+    flag = True
+    while (flag != False):
+        if len(s)>1:
+            if (s[i]==s[i+1]):
+                s_t=s[:i]+s[i+2:]
+                s = ""
+                s=s_t
+                i = 0
+                count = 0
+            else:
+                i = i+1
+                count = count + 1            
+        else:
+            flag = False
+        # Teminating condition
+        if count ==( len(s)-1):
+             flag = False
+             
+    if len(s)<1:
+        return ("Empty String")
+    else:
+        return (s)
+    
+s = input().strip()
+result = super_reduced_string(s)
+print(result)
